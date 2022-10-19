@@ -29,19 +29,27 @@ Anchors are used at the beginning and end of an expression. `^` and `$` are your
 ### Quantifiers
 /^#`?`([a-f0-9]`{6}`|[a-f0-9]`{3}`)$/
 
-Quantifiers specify how many instances of a character, group, or character class must be present in the input for a match to be found. Quantifier characters are `?`, `*`, `+`,  and `{}`. `?` matches zero or one time. `*` matches zero or more times. `+` matches one or more times. `{}` is dependent on the integer inside. So for this case `{6}` matches 6 times and `{3}` matches 3. `{6,}` matches at least 6 times. `{3,6}`matches from 3 to 6 times.
+Quantifiers specify how many instances of a character, group, or character class must be present in the input for a match to be found. Quantifier characters are `?`, `*`, `+`,  and `{}`. `?` matches zero or one time. `*` matches zero or more times. `+` matches one or more times. `{}` is dependent on the integer inside. So for this example, `{6}` matches 6 times and `{3}` matches 3. `{6,}` matches at least 6 times. `{3,6}`matches from 3 to 6 times.
 
 ### Grouping Constructs
-/^#?([a-f0-9]{6}|[a-f0-9]{3})$/
+/^#?`([a-f0-9]{6}|[a-f0-9]{3})`$/
+
+Grouping outlines the subexpression(s) of a regular expression and captures the substring(s) of an input string.
 
 ### Bracket Expressions
-/^#?([a-f0-9]{6}|[a-f0-9]{3})$/
+/^#?(`[a-f0-9]`{6}|`[a-f0-9]`{3})$/
+
+Similiar to grouping except `[]` outlines a character class or quantifier statement.
 
 ### Character Classes
-/^#?([a-f0-9]{6}|[a-f0-9]{3})$/
+/^#?(`[a-f0-9]`{6}|`[a-f0-9]`{3})$/
+
+Character classes allow matches to only certain types characters. In this example, `a-f` allows letters a-f and `0-9` allows digits 0-9.
 
 ### The OR Operator
-/^#?([a-f0-9]{6}|[a-f0-9]{3})$/
+/^#?([a-f0-9]{6}`|`[a-f0-9]{3})$/
+
+The OR operator is indicated by the `|`. In this example, it is similar to saying that either `[a-f0-9]{6}` or `[a-f0-9]{3}` is valid since hex values can be 6 or 3 characters with letters a-f and digits 0-9.
 
 ### Flags
 /^#?([a-f0-9]{6}|[a-f0-9]{3})$/
@@ -61,6 +69,9 @@ https://medium.com/factory-mind
 
 https://en.wikipedia.org/wiki/Regular_expression 
 
-https://learn.microsoft.com/en-us/dotnet/standard/base-types/quantifiers-in-regular-expressions
+https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions
+
+https://www.regular-expressions.info/
+
 
 
